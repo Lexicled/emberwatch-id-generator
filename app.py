@@ -39,9 +39,14 @@ def add_profile_info(image_path, font_path, disc_username, rank, ss_class,
         image = Image.open(image_path)
         draw = ImageDraw.Draw(image)
 
+        text_bbox = ImageFont.truetype("font-bold.ttf", 34).getbbox(disc_username)
+        text_width = text_bbox[2] - text_bbox[0]
+        
+        x_offset = (image.width - text_width) / 2
+
         # Hard-coded text positions, sizes, and boldness
         text_settings = {
-            "disc_username": (246, 131, 34, True),
+            "disc_username": (x_offset, 131, 34, True),
             "rank": (237, 158, 25, False),
             "ss_class": (31, 64, 22, False),
             "ss_desc": (31, 85, 22,  False),
@@ -57,7 +62,6 @@ def add_profile_info(image_path, font_path, disc_username, rank, ss_class,
             else:
                 font_path = "font.ttf" 
 
-            font = ImageFont.truetype(font_path, size)
             font = ImageFont.truetype(font_path, size)
             font_weight = "bold" if bold else "normal"
             font = ImageFont.truetype(font_path, size, encoding="unic", layout_engine=ImageFont.Layout.BASIC)
