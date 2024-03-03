@@ -43,12 +43,12 @@ def add_profile_info(image_path, font_path, disc_username, rank, ss_class,
         text_settings = {
             "disc_username": (246, 131, 34, True),
             "rank": (237, 158, 25, False),
-            "ss_class": (31, 69, 22, False),
-            "ss_desc": (33, 85, 22,  False),
-            "nms_username": (36, 180, 22, True),
-            "social": (36, 199, 22, True),
-            "fc": (36, 218, 22, True),
-            "platform": (36, 237, 22, True)
+            "ss_class": (31, 64, 22, False),
+            "ss_desc": (31, 85, 22,  False),
+            "nms_username": (36, 180, 15, True),
+            "social": (36, 199, 15, True),
+            "fc": (36, 218, 15, True),
+            "platform": (36, 237, 15, True)
         }
 
         for key, (x, y, size, bold) in text_settings.items():
